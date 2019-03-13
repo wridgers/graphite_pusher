@@ -120,7 +120,7 @@ class GraphitePusher {
 						std::perror("send");
 						close(sock);
 						sock = -1;
-					} else {
+
 						// send failed, requeue metrics
 						for (const auto& [path, ts, sample] : metrics) {
 							push_sample(path, ts, sample);
